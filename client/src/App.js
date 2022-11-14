@@ -2,24 +2,33 @@
 
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
+
 
 function App() {
    const [hello, setHello] = useState('')
 
     useEffect(() => {
-        axios.get('/calendar/select')
-        .then(response => setHello(response.data))
+        let body = {
+            text : ''
+        }
+        axios.post('/calendar/create', body)
+        .then(response => {
+            console.log("res console :: ", response.data)
+            console.log("body console :: ", body.text)
+            setHello(response.data)
+        })
         .catch(error => console.log(error))
     }, []);
 
     return (
         <div>
-            백엔드에서 가져온 데이터입니다 : {hello}
+            백엔드에서 가져온 데이터입니다 ddd: {hello}
             <hr/>
             <form action="">
               <span>simple login</span>
               <input id = 'login' type="text"/>
-              <button>요청</button> 
+              <Button>요청</Button>
             </form>
         </div>
     );

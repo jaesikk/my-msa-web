@@ -2,22 +2,22 @@ package com.example.mymsaweb.domain;
 
 
 public class Calendar {
-  private long month;
-  private long day;
+  private String name;
+  private String text;
 
-  public long getMonth() {
-    return month;
+  public String getName() {
+    return name;
   }
 
-  public void setMonth(long month) {
-    this.month = month;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public long getDay() {
-    return day;
+  public String getText() {
+    return text;
   }
 
-  public void setDay(long day) {
-    this.day = day;
+  public void setText(String text) {
+    this.text = text;
   }
 }
