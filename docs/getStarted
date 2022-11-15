@@ -1,0 +1,31 @@
+# Get Started
+
+[toc]
+
+## AWS EC2
+
+- 인스턴스 생성 (프리티어) : ubuntu
+
+- 탄력적 IP 생성 (Elastic IP)
+
+- Putty에서 붙기
+
+  .pem key를 .ppk로 변환하여 private key로  생성
+
+  ​	IP/PORT 확인 후 authentication for private key 에 경로 등록하여 접속
+
+  ​	안되면 Putty 최신버전하기 (ErrorMsg : Server sent public key)
+
+  
+
+  ubuntu command
+
+  0. ls -al
+
+  1. `sudo apt update;`
+
+     `sudo apt list;`
+
+  2. `sudo apt install apache2;`
+
+  3. 해당 IP에 접속 가능 => 도메인 사서 IP 연결해주면  domain URL로도 접속 가능!!
