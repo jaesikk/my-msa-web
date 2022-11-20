@@ -1,7 +1,7 @@
 package com.example.mymsaweb.domain;
 
 
-public class Calendar {
+public class CalendarDto {
   private String name;
   private String text;
 
