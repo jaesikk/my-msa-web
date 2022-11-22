@@ -24,20 +24,33 @@ public class VisitorController {
     private final VisitorRepository visitorRepository;
 
     @PostMapping("")
-    public VisitorDto createVisit(String userId, String comment) {
+    public List<VisitorDto> createVisit(@RequestBody VisitorDto visitorDto) {
         System.out.println("@ @@ @  @ post mapping");
-        if (userId == null || userId.isBlank()) {
+        System.out.println("@ @ @ @ @@ @  > > >  > > > >test @ @ @ @ @ @ @ @ @ "+visitorDto+"::///::");
+        if (visitorDto.getUserId() == null || visitorDto.getUserId().isBlank()) {
             System.out.println(" - - -  -  Null logic");
-            userId = "annonymous";
+            visitorDto.setUserId("annonymous");
         }
-        final VisitorDto visitorDto = VisitorDto.builder()
-                .userId(userId)
-                .comment(comment)
-                .logDate(new Date())
-                .build();
-        System.out.println("@ @ @@ @ @ @ @ @ @ =  = = = = = =  => > > >"+userId+":::"+comment);
-        return visitorRepository.save(visitorDto);
+//        System.out.println("@ @ @@ @ @ @ @ @ @ =  = = = = = =  => > > >"+userId+":::"+comment);
+        visitorRepository.save(visitorDto);
+        return visitorRepository.findAll();
     }
+//    @PostMapping("")
+//    public VisitorDto createVisit(@RequestBody String body, String userId, String comment) {
+//        System.out.println("@ @@ @  @ post mapping");
+//        System.out.println("@ @ @ @ @@ @  > > >  > > > >test @ @ @ @ @ @ @ @ @ "+body+"::///::"+body);
+//        if (userId == null || userId.isBlank()) {
+//            System.out.println(" - - -  -  Null logic");
+//            userId = "annonymous";
+//        }
+//        final VisitorDto visitorDto = VisitorDto.builder()
+//                .userId(userId)
+//                .comment(comment)
+//                .logDate(new Date())
+//                .build();
+//        System.out.println("@ @ @@ @ @ @ @ @ @ =  = = = = = =  => > > >"+userId+":::"+comment);
+//        return visitorRepository.save(visitorDto);
+//    }
 
     @GetMapping("")
     public List<VisitorDto> getVisit(){

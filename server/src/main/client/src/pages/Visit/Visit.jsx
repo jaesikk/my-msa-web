@@ -13,19 +13,20 @@ import {
 import axios from 'axios';
 
 const Visit = () => {
-  const [lst, setLst] = useState('');
-  const [userid, setUserId] = useState('');
+  const [lst, setLst] = useState([]);
+  const [userId, setUserId] = useState('');
   const [comment, setComment] = useState('');
   useEffect(()=>{
     getApi();
   }, []);
 
   const requestApi= (body)=> {
-    console.log("requestApi operated")
+    console.log("requestApi operated",body)
     axios.post('/api/visitor', body)
     .then(res => {
       // setCards(res.data)
       console.log(res.data, '@@@@requestAPI')
+      setLst(res.data)
     })
     .catch(err => {
       console.log(err)
@@ -35,7 +36,7 @@ const Visit = () => {
   const getApi = ()=> {
     axios.get('/api/visitor')
     .then(res => {
-      setLst(res.data);
+      setLst(res.data)
       console.log(res.data, '@@@@getAPI')
     })
     .catch(err => {
@@ -53,7 +54,7 @@ const Visit = () => {
           // 2. 자바에서 빌드할때 왜 적용 안되는지
           e.preventDefault();
           let body = {
-            userid:userid,
+            userId:userId,
             comment: comment
           }
           requestApi(body);
@@ -65,10 +66,10 @@ const Visit = () => {
       </Grid>
       <hr />
       <Grid>
-        <p>{lst[0].userId}</p>
+        {/* <p>{lst[0].userid}</p>
         <p>{lst[0].comment}</p>
-        <p>{lst[0].logDate}</p>
-        {/* {lst.map((row) => (
+        <p>{lst[0].logDate}</p> */}
+        {lst.map((row) => {return (
           <Grid key = {row}>
             <Paper>
               <p>{row.userId}</p>
@@ -76,7 +77,7 @@ const Visit = () => {
               <p>{row.logDate}</p>
             </Paper>
           </Grid>
-        ))} */}
+        )})}
       </Grid>
       <hr />
       <h2> 아직 DB에 연결중입니다. 기다려주세요😀</h2>
