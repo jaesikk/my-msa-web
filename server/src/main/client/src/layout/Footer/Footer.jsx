@@ -6,7 +6,7 @@ const Copyright=()=>{
   return (
     <Typography variant="body2" color="textSecondary" align="center" style={{height:'23px'}}>
       {'Copyright © '}      
-        7링 바이브      
+        Noah Eom
       {new Date().getFullYear()}
       {'.'}
     </Typography>
