@@ -4,6 +4,10 @@ import Home from './pages/Home/Home';
 import Visit from './pages/Visit/Visit';
 import Shop from './pages/Shop/Shop';
 import Auth from './pages/Auth/Auth';
+import "./style/calendar.css";
+import "./style/table.css";
+import "./style/modal.css"
+
 
 const App = () => {
   return (

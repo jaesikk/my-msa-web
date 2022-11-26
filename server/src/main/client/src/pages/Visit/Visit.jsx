@@ -3,12 +3,8 @@ import {Link} from 'react-router-dom';
 import {
   Paper,
   Grid,
-  Box,
-  AppBar,
   Button,
-  useScrollTrigger,
   TextField,
-  Slide,
 } from '@material-ui/core';
 import axios from 'axios';
 import Layout from '../../layout/Layout';

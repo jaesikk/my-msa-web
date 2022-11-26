@@ -73,13 +73,13 @@
    };
    ```
 
-   
+   ### React 배포파일 `npm run build`
 
 ---
 
 ## Spring
 
-`./gradlew build` : /build/libs 경로에 생성된 .jar로 배포
+### Spring 배포파일 `./gradlew build` : /build/libs 경로에 생성된 .jar로 배포
 
 ### JPA
 

@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import {
   Paper,
   Grid,
-  AppBar,
   Button,
-  useScrollTrigger,
-  Slide,
 } from '@material-ui/core';
 import Layout from '../../layout/Layout';
+import Calendar from '../../components/calendar/Calendar';
 
 const Home = () => {
   return (
@@ -27,6 +25,10 @@ const Home = () => {
             <p>상점</p>
           </Link>
         </Paper>  
+      </Grid>
+      <Grid>
+        <h2>This is My Calendar</h2>
+        <Calendar />
       </Grid>
     </Layout>
   );
