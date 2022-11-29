@@ -35,22 +35,6 @@ public class VisitorController {
         visitorRepository.save(visitorDto);
         return visitorRepository.findAll();
     }
-//    @PostMapping("")
-//    public VisitorDto createVisit(@RequestBody String body, String userId, String comment) {
-//        System.out.println("@ @@ @  @ post mapping");
-//        System.out.println("@ @ @ @ @@ @  > > >  > > > >test @ @ @ @ @ @ @ @ @ "+body+"::///::"+body);
-//        if (userId == null || userId.isBlank()) {
-//            System.out.println(" - - -  -  Null logic");
-//            userId = "annonymous";
-//        }
-//        final VisitorDto visitorDto = VisitorDto.builder()
-//                .userId(userId)
-//                .comment(comment)
-//                .logDate(new Date())
-//                .build();
-//        System.out.println("@ @ @@ @ @ @ @ @ @ =  = = = = = =  => > > >"+userId+":::"+comment);
-//        return visitorRepository.save(visitorDto);
-//    }
 
     @GetMapping("")
     public List<VisitorDto> getVisit(){
