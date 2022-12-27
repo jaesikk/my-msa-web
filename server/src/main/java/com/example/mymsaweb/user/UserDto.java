@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class userDto {
+public class UserDto {
   private Long id;
   @NotEmpty(message = "아이디를 적어주세요.")
   private String userId;
