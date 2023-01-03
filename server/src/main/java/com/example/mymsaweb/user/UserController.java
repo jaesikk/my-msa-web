@@ -15,27 +15,29 @@ public class UserController {
   private final UserService userService;
 
   @GetMapping("")
-  public ResponseDto<UserDto> getUser(@RequestHeader(value="User-Id") String userId) {
+  public ResponseDto<UserDto> getUser(@RequestHeader(value="userId") String userId) {
+    System.out.println("@ @ @ @ @@ @ @ @ @ @ @ @ Getmaaping controller ! ! ! == > > > >" +userId);
     UserDto user = userService.findOne(userId);
     return new ResponseDto(
         HttpStatus.OK.value(),
         "유저 조회",
-        new UserDto(user.getId(), user.getAvatar(), user.getNickname()));
+        new UserDto(user.getId(), user.getUserId(), user.getUserNm(), user.getUserPw()));
   }
 
   // 유저 생성 & 수정
   @PostMapping("")
-  public ResponseDto<UserDto> createUser(@Valid @RequestBody UserCreateDto data) {
-    UserDto user = userService.join(data.getId(), data.getAvatar(), data.getNickname());
+  //@Valid
+  public ResponseDto<UserDto> createUser(@Valid @RequestBody UserDto data) {
+    UserDto user = userService.join(data.getId(), data.getUserId(), data.getUserNm(), data.getUserPw());
     return new ResponseDto(
         HttpStatus.OK.value(),
         "유저 생성",
-        new UserDto(user.getId(), user.getAvatar(), user.getNickname()));
+        new UserDto(user.getId(), user.getUserId(), user.getUserNm(), user.getUserPw()));
   }
 
   // 유저 삭제
   @DeleteMapping("")
-  public void deleteUser(@RequestHeader(value="User-Id") String userId) {
+  public void deleteUser(@RequestHeader(value="userId") String userId) {
     userService.remove(userId);
   }
 }
