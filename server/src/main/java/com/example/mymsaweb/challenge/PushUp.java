@@ -18,9 +18,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PushUp {
-  @Id
   @GeneratedValue(strategy = IDENTITY)
   private Long Id;
+  @Id
   private String challenger;
 //  @NotEmpty(message = "항목을 선택해주세요.")
   private Long completeYn;
