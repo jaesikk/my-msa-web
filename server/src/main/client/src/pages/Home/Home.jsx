@@ -24,6 +24,9 @@ const Home = () => {
           <Link to="/shop">
             <p>상점</p>
           </Link>
+          <Link to="/challenge">
+            <p>챌린지</p>
+          </Link>
         </Paper>  
       </Grid>
       <Grid>
